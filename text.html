@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Phan LC Login page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form class="login">    
+            <h1>Login to continue</h1>
+            <div class="form-group">
+                Username: <input type="text" class="form-group" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                Password: <input type="password" class="form-group" placeholder="Password" required>
+            </div>
+            <input type="submit" value="Submit" class="submit"> 
+        </form>
+    </div>
+    
+    <script language="javascript">
+        function check(form)
+        {
+        
+        if(form.userid.value == "testuser" && form.pwd.value == "12345")
+        {
+            
+        }
+        else
+        {
+            alert("Error Password or Username")
+            return false;
+        }
+        }
+    </script> 
+    </body>
+</html>
