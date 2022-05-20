@@ -1,4 +1,4 @@
-from tkinter import FIRST
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -8,11 +8,12 @@ USERNAME = 'hung'
 PASSWORD = '12345'
 
 
-s = Service("C:/Users/conbo/ChromeDriver/chromedriver.exe")
+s = Service("chromedriver.exe")
 driver = webdriver.Chrome(service=s)
 
 driver.get('http://127.0.0.1:5501/adduserpage.html')
 
+sleep(2)
 firstName_input = driver.find_element_by_id('first-name')
 firstName_input.send_keys(FIRSTNAME)
 
@@ -26,5 +27,8 @@ password_input = driver.find_element_by_id('password')
 password_input.send_keys(PASSWORD)
 
 login_button = driver.find_element_by_id('add-user')
+sleep(2)
 login_button.click()
 
+sleep(5)
+driver.close()

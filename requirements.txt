@@ -1,0 +1,2 @@
+###### Requirements with Version Specifiers ######
+selenium == 4.1.5
