@@ -1,6 +1,14 @@
+from re import L
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import NoSuchElementException        
+def check_exists_by_xpath(xpath):
+    try:
+        driver.find_element_by_xpath(xpath)
+    except NoSuchElementException:
+        return False
+    return True
 
 FIRSTNAME= 'Hung'
 LASTNAME = 'Hoang'
@@ -30,5 +38,9 @@ login_button = driver.find_element_by_id('add-user')
 sleep(2)
 login_button.click()
 
-sleep(5)
-driver.close()
+sleep(2)
+if check_exists_by_xpath("//a[text()='log in']"):
+    print("login succes")
+else: 
+    print("login failed")
+
